@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common History Replica</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, Helvetica, sans-serif; /* Change this to your desired font family */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 28px;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 25px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Header styles */
+        header {
+            background-color: white;
+            padding: 10px;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Spread logo and nav apart */
+        }
+        
+
+        .logo h1 {
+            color: black;
+            margin: 0;
+        }
+
+        .main-nav {
+            
+            margin-left:900px; /* Pushes the navigation to the right */
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-nav ul li {
+            margin-left: 20px;
+           
+        }
+
+        .main-nav ul li a {
+            text-decoration: none;
+            background-color: #0b0b0b;
+            color: white;
+            border: 1px solid #333;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius:10px
+            
+            
+        }
+
+        
+
+        /* Media Query for tablets and below */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            .main-nav ul li a {
+                font-size: 18px;
+            }
+
+            .main-nav {
+                margin-left: 0; /* Remove fixed margin */
+                flex-grow: 1; /* Allow nav to grow and take available space */
+                justify-content: flex-end; /* Align nav to the right */
+            }
+        }
+
+        /* Media Query for mobile devices */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 18px; /* Slightly reduce font size for better readability */
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            .main-nav ul li a {
+                font-size: 16px;
+            }
+
+            .logo h1 {
+                font-size: 1.8em;
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html"> <!-- Replace 'index.html' with your home page URL -->
+                    <h1>Common | History</h1>
+                </a>
+            </div>
+
+            <!-- Navigation bar with Home and About links -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html" >Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <h2>TOWNBOOK</h2>
+        <p>
+            TownBook creates a global tapestry of local histories, preserving and celebrating the unique stories of towns across the world. Our vision is to build a digital repository that connects communities, fosters understanding, and inspires a shared appreciation for the rich and diverse heritage that shapes our world. Through innovative storytelling and cutting-edge technology, we aim to make local histories accessible, engaging, and meaningful for future generations.
+        </p>
+        <h3>Vision</h3>
+        <p>
+            To document and share the rich local histories of towns worldwide, connecting communities and preserving unique stories for future generations through innovative media.
+        </p>
+
+        <h3>Mission</h3>
+        <p>
+            To empower communities by inviting local voices to share their unique stories, traditions, and experiences. We believe that every town has a narrative worth telling, and through collaborative storytelling, we aim to create an accessible platform that honors cultural heritage, fosters community pride, and connects generations. Together, we will celebrate the past, inspire the present, and illuminate the future, ensuring that the heart of each community is cherished and shared for years to come.
+        </p>
+    </section>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

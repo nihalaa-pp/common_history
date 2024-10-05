@@ -1,0 +1,629 @@
+/* Resetting margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling the body and making the layout cover full height */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Base styles for .logo h1 */
+.logo h1 {
+    font-size: 5px; /* Default font size */
+    color: #333; /* Default color */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+
+.logo a {
+    text-decoration: none;
+}
+
+/* Media query for small tablets and larger mobile devices */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2.5rem; /* Smaller font size for tablets */
+        color: #444; /* Optional: Change color for tablets */
+        text-decoration: none;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 2rem; /* Even smaller font size for mobile */
+        color: #555; /* Optional: Change color for mobile */
+        text-decoration: none;
+    }
+}
+
+/* Media query for large screens */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .logo h1 {
+        font-size: 3.5rem; /* Larger font size for medium screens */
+        color: #222; /* Optional: Change color for medium screens */
+        text-decoration: none;
+    }
+}
+
+/* Media query for extra large screens */
+@media (min-width: 1200px) {
+    .logo h1 {
+        font-size: 4rem; /* Larger font size for extra large screens */
+        color: #222; /* Optional: Change color for extra large screens */
+        text-decoration: none;
+        
+    }
+}
+
+
+
+/* Center the main navigation for the search bar */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.main-nav input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Default styles for the button */
+.main-nav button {
+    background-color: transparent;
+    border: 1px solid #333;
+    cursor: pointer;
+    padding: 10px 20px; /* Default padding */
+    font-size: 16px; /* Default font size */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .main-nav button {
+        padding: 8px 16px; /* Reduced padding for smaller screens */
+        font-size: 14px; /* Smaller font size */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .main-nav button {
+        padding: 6px 12px; /* Further reduced padding */
+        font-size: 12px; /* Even smaller font size */
+        border-radius: 4px; /* Slightly rounded corners */
+    }
+}
+
+/* Add a hover effect for buttons */
+.main-nav button:hover {
+    background-color: #333; /* Background on hover */
+    color: #fff; /* Text color on hover */
+}
+
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: auto; /* Keeps dropdown on the left */
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .dropdown {
+        margin-right: 20px; /* Adjust margin for tablets */
+        
+        /* You can also change other properties as needed */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .dropdown {
+        display: block; /* Stack dropdown vertically on mobile */
+        margin: 10px auto; /* Center it with auto margins */
+        /* You can also change other properties as needed */
+    }
+}
+
+
+.search-input {
+    width: 300px; /* Set desired width */
+    height: 40px; /* Set desired height */
+    padding: 10px; /* Add padding for better appearance */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    margin-right: 0%;
+}
+
+
+/* Search button styling */
+.search-button {
+    font-size: 20px; /* Increase font size */
+    padding: 5px 20px; /* Increase padding */
+    background-color: #000000; /* Change background color to black */
+    color: #ffffff; /* Change text color to white */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: none; /* No transition effect */
+    margin-right: 20px;
+    
+}
+
+
+/* Media Queries for the search button */
+@media (max-width: 768px) {
+    .search-button {
+        font-size: 16px; /* Smaller font size for smaller screens */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-button {
+        font-size: 14px; /* Smaller font size for mobile */
+        padding: 6px 12px; /* Adjust padding for mobile */
+    }
+}
+.dropdown-content ul {
+    list-style-type: none; /* This removes the bullets */
+    padding-left: 0; /* Optional: to remove default padding */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-decoration: none;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li {
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block; /* Show the dropdown */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .dropdown-content {
+        min-width: 100%; /* Make the dropdown full width */
+    }
+
+    .dropdown-content a {
+        padding: 10px 12px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 769px) {
+    .dropdown-content {
+        min-width: 160px; /* Keep the original width for larger screens */
+    }
+
+    .dropdown-content a {
+        padding: 12px 16px; /* Restore original padding */
+    }
+}
+
+
+/* Timeline section */
+/* Default styles for larger screens */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    position: relative;
+    margin: 20px 0;
+}
+
+.timeline-year {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+}
+
+.timeline-progress {
+    position: relative;
+    width: 80%; /* Adjust the percentage to control the width of the timeline */
+    height: 10px;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    margin: 0 20px;
+}
+
+.timeline-arrow {
+    position: absolute;
+    height: 20px;
+    width: 60px; /* Width of the block marking the year */
+    background-color: #7c7c7c;
+    top: -7px; /* Adjust this to center the arrow */
+    left: 50%; /* Initial position of the arrow */
+    transform: translateX(-50%);
+    transition: left 0.5s ease; /* Smooth movement */
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px; /* Reduced padding */
+    }
+
+    .timeline-year {
+        font-size: 14px; /* Smaller font size */
+        margin-bottom: 10px; /* Add margin for spacing */
+    }
+
+    .timeline-progress {
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px 0; /* Margin for spacing */
+    }
+
+    .timeline-arrow {
+        width: 40px; /* Smaller arrow size */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .timeline-year {
+        font-size: 12px; /* Even smaller font size */
+        padding: 8px; /* Adjust padding */
+    }
+
+    .timeline-progress {
+        height: 8px; /* Smaller height for mobile */
+    }
+
+    .timeline-arrow {
+        height: 18px; /* Smaller height */
+        width: 30px; /* Adjust arrow width */
+        font-size: 12px; /* Smaller font size */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .timeline-progress {
+        width: 90%;
+    }
+
+    .timeline-arrow {
+        width: 40px; /* Reduce width for mobile */
+    }
+}
+
+#timelineBtn {
+    font-size: 20px; /* Increase font size */
+    padding: 10px 20px; /* Increase padding */
+    background-color: #0b0b0b; /* Change background color */
+    color: white; /* Change text color */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 20px; /* Space between search button and timeline button */
+}
+
+@media (max-width: 768px) {
+    #timelineBtn {
+        font-size: 16px; /* Smaller button font size */
+        padding: 8px 16px; /* Adjust padding */
+        margin-left: 0px; /* Adjust left margin for mobile */
+    }
+}
+@media (max-width: 1200px) {
+    #timelineBtn {
+        font-size: 16px; /* Smaller button font size */
+        padding: 8px 16px; /* Adjust padding */
+        margin-left: auto; /* Adjust left margin for mobile */
+    }
+}
+
+input[type="text"] {
+    font-size: 18px; /* Increase font size */
+    padding: 10px; /* Increase padding */
+    border: 2px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add rounded corners */
+    width: 300px; /* Set a width for the search bar */
+    margin-right: 10px; /* Add space between the button and search bar */
+}
+
+input[type="text"]:focus {
+    border-color: #060606; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+@media (max-width: 768px) {
+    input[type="text"] {
+        width: 100%; /* Make search bar full width on mobile */
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+}
+
+/* Gallery section */
+.gallery {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 5rem;
+    gap: 2rem;
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    flex-grow: 1;
+    height: auto; /* Ensures this section grows to fill remaining space */
+}
+
+/* Styling individual photo cards */
+.photo-card {
+    position: relative;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    height: 500px; /* Adjust height to maintain proportion */
+    margin: 0; /* Remove margin to keep cards in line */
+    flex: 0 0 auto; /* Prevent flex items from growing */
+}
+
+.photo-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+/* Adjust the image */
+.photo-card img {
+    height: 400px; /* Adjusted height for larger images */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Styling photo details and info */
+/* General styles for the photo details */
+.photo-details {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center; /* Centers the buttons */
+    gap: 10px; /* Adds gap between the buttons */
+}
+
+/* Adjustments for media queries */
+@media (max-width: 768px) {
+    .photo-details {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+    }
+
+    .photo-details button {
+        width: 100%; /* Make buttons full width on smaller screens */
+        margin: 0.5rem 0; /* Add spacing between buttons */
+        padding: 0.5rem; /* Adjust padding for buttons */
+    }
+
+    .photo-details p {
+        margin-top: 0.5rem; /* Add space above the location text */
+        text-align: center; /* Center the text */
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-details button {
+        font-size: 14px; /* Adjust button font size for small screens */
+    }
+}
+
+
+.photo-details button {
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    padding: 0.5rem 1rem; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .photo-details button {
+        width: 100%; /* Make buttons full width on smaller screens */
+        padding: 0.5rem; /* Adjust padding for mobile */
+        margin: 0.5rem 0; /* Add spacing between buttons */
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-details button {
+        font-size: 14px; /* Further adjust font size for very small screens */
+    }
+}
+
+
+.photo-info {
+    position: absolute; /* Absolute positioning for details */
+    bottom: 0; /* Position it at the bottom of the card */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
+    padding: 1rem; /* Padding around details */
+    border-radius: 0 0 8px 8px; /* Round bottom corners */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Shadow for floating effect */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.photo-card:hover .photo-info {
+    opacity: 1; /* Show details on hover */
+}
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .gallery {
+        padding: 4rem; /* Adjust padding */
+        gap: 1.5rem; /* Reduce gap */
+    }
+
+    .photo-card {
+        height: 450px; /* Adjust height for medium screens */
+    }
+
+    .photo-card img {
+        height: 350px; /* Adjust image height */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        padding: 3rem; /* Further reduce padding */
+        gap: 1rem; /* Further reduce gap */
+    }
+
+    .photo-card {
+        height: 400px; /* Further adjust height for smaller screens */
+    }
+
+    .photo-card img {
+        height: 250px; /* Adjust image height */
+    }
+
+    
+
+   
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        padding: 2rem; /* Minimum padding for small screens */
+        gap: 0.5rem; /* Reduce gap */
+    }
+
+    .photo-card {
+        height: 400px; /* Further adjust height for very small devices */
+    }
+
+    .photo-card img {
+        height: 200px; /* Further adjust image height */
+    }
+
+    .photo-info {
+        padding: 0.5rem; /* Adjust padding for details */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    footer {
+        padding: 0.5rem; /* Reduce padding on smaller screens */
+    }
+
+    .footer-links {
+        margin-bottom: 0.5rem; /* Reduce margin on smaller screens */
+    }
+
+    .footer-links a {
+        margin: 0 0.5rem; /* Reduce margin between links */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 0.5rem 1rem; /* Adjust padding for very small screens */
+    }
+
+    .footer-links a {
+        display: block; /* Stack links vertically */
+        margin: 0.5rem 0; /* Add vertical spacing between links */
+    }
+}
+
+/* Media Queries for Responsiveness */
+
+

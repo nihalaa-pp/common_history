@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common History Replica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <!-- Replace 'index.html' with your home page URL -->
+                <h1>Common | History</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <div class="dropdown">
+                <button id="timelineBtn" onclick="toggleDropdown()">Global Timeline</button>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search here...">
+                <button class="search-button" onclick="searchPhotos()" style="background-color: black; color: white;">Search</button>
+                <div id="dropdownContent" class="dropdown-content">
+                    <ul id="locationList" >
+                        <li ><a href="#" onclick="filterPhotos('thamarassery')" >Thamarassery</a></li>
+                        <li><a href="#" onclick="filterPhotos('ponoor')">Ponoor</a></li>
+                        <li><a href="#" onclick="filterPhotos('kannur')">Kannur</a></li>
+                        <li><a href="#" onclick="filterPhotos('kozhikode')">Kozhikode</a></li>
+                        <li><a href="#" onclick="filterPhotos('wayanad')">Wayanad</a></li>
+                        <li><a href="#" onclick="filterPhotos('malappuram')">Malappuram</a></li>
+                        <li><a href="#" onclick="filterPhotos('mukkam')">Mukkam</a></li>
+                    </ul>
+                </div>
+            </div>
+           
+           
+        </nav>
+    </header>
+
+    <div class="timeline">
+        <div class="timeline-year" data-year="2007">2007</div>
+        <div class="timeline-progress">
+            <div class="timeline-arrow" id="timeline-arrow"></div>
+        </div>
+        <div class="timeline-year" data-year="2024">2024</div>
+    </div>
+
+    <section class="gallery" id="photoGallery">
+        <!-- All photos will be dynamically loaded here -->
+    </section>
+
+    <footer>
+        <div class="footer-links" >
+            <a href="about.html" >About</a>
+            <a href="contact.html">Contact</a>
+            
+        </div>
+        <p>&copy; 2024 Common History</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
