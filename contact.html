@@ -20,6 +20,8 @@
             text-decoration: none; /* Prevent underline on hover or focus */
         }
 
+        
+
         section {
             max-width: 800px; /* Limit the width of content */
             margin: 40px auto;
@@ -77,6 +79,10 @@
 
         /* Media Query for tablets and below */
         @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2.5em; /* Adjust the logo size for tablet screens */
+                margin: 10px 0; /* Add margin for better spacing */
+            }
             h1 {
                 font-size: 2.2em;
             }
@@ -100,6 +106,10 @@
 
         /* Media Query for mobile devices */
         @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 2em; /* Further adjust the logo size for mobile screens */
+                margin: 5px 0; /* Add margin for better spacing */
+            }
             h1 {
                 font-size: 1.8em;
             }
@@ -123,11 +133,17 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"> <!-- Replace 'index.html' with your home page URL -->
-                <h1>Common | History</h1>
-            </a>
+   <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html"> <!-- Replace 'index.html' with your home page URL -->
+                    <h1>Common History</h1>
+                </a>
+            </div>
+
+            <!-- Navigation bar with Home and About links -->
+            
         </div>
     </header>
 

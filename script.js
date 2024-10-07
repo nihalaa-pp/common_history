@@ -31,8 +31,7 @@ function showAllPhotos() {
         card.innerHTML = `
             <img src="${photo.src}" alt="Photo">
             <div class="photo-details">
-                <button>SHARE</button>
-                <button>GRAB</button>
+                <button onclick="openSharePopup(event, '${photo.location}', '${photo.src}')">SHARE</button>
                 <p>${photo.location.toUpperCase()}</p>
             </div>
             <div class="photo-info" style="display: none;">
@@ -56,8 +55,7 @@ function filterPhotos(location) {
         card.innerHTML = `
             <img src="${photo.src}" alt="Photo">
             <div class="photo-details">
-                <button>SHARE</button>
-                <button>GRAB</button>
+                <button onclick="openSharePopup(event, '${photo.location}', '${photo.src}')">SHARE</button>
                 <p>${location.toUpperCase()}</p>
             </div>
             <div class="photo-info" style="display: none;">
@@ -81,14 +79,50 @@ function showDetails(card) {
     }
 }
 
-// Event listener to close the dropdown when clicking outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('#timelineBtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        Array.from(dropdowns).forEach(openDropdown => {
-            openDropdown.classList.remove('show');
-        });
+// Function to open the share popup
+function openSharePopup(event, location, src) {
+    event.stopPropagation(); // Prevent the click from triggering card details toggle
+    
+    // Set photo information in the popup
+    const popup = document.getElementById("sharePopup");
+    popup.querySelector(".popup-title").textContent = `Share Photo from ${location}`;
+    popup.querySelector(".popup-image").src = src;
+
+    // Show the popup
+    popup.style.display = "block";
+}
+
+// Function to close the share popup
+function closeSharePopup() {
+    document.getElementById("sharePopup").style.display = "none";
+}
+
+// Function to share on social media
+function shareOnSocialMedia(platform) {
+    const popup = document.getElementById("sharePopup");
+    const imgSrc = popup.querySelector(".popup-image").src;
+    
+    // Handle sharing logic for each platform
+    let shareUrl;
+    if (platform === 'facebook') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(imgSrc)}`;
+    } else if (platform === 'whatsapp') {
+        // WhatsApp sharing link, sharing text with image URL
+        const message = `Check out this photo: ${imgSrc}`;
+        shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+    } else if (platform === 'twitter') {
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(imgSrc)}`;
+    } else if (platform === 'print') {
+        window.print(); // Keep this to maintain print functionality
+        return; // Exit to avoid opening a share URL for print
+    } else {
+        // If an unsupported platform is selected, return early
+        return;
     }
+
+    // Open the share URL in a new window/tab
+    window.open(shareUrl, '_blank');
+    closeSharePopup();
 }
 
 // Load all photos on page load
@@ -113,8 +147,7 @@ function searchPhotos() {
         card.innerHTML = `
             <img src="${photo.src}" alt="Photo">
             <div class="photo-details">
-                <button>SHARE</button>
-                <button>GRAB</button>
+                <button onclick="openSharePopup(event, '${photo.location}', '${photo.src}')">SHARE</button>
                 <p>${photo.location.toUpperCase()}</p>
             </div>
             <div class="photo-info" style="display: none;">
@@ -129,31 +162,24 @@ function searchPhotos() {
     }
 }
 
-
-
-
-
 // Event listener for the timeline arrow movement and dynamic year update
 document.addEventListener('DOMContentLoaded', function () {
-const timelineArrow = document.getElementById('timeline-arrow');
-const timeline = document.querySelector('.timeline-progress');
+    const timelineArrow = document.getElementById('timeline-arrow');
+    const timeline = document.querySelector('.timeline-progress');
 
-timeline.addEventListener('mousemove', (e) => {
-const timelineRect = timeline.getBoundingClientRect();
-const offsetX = e.clientX - timelineRect.left;
-const percentage = (offsetX / timelineRect.width) * 100;
+    timeline.addEventListener('mousemove', (e) => {
+        const timelineRect = timeline.getBoundingClientRect();
+        const offsetX = e.clientX - timelineRect.left;
+        const percentage = (offsetX / timelineRect.width) * 100;
 
-// Update the arrow position
-timelineArrow.style.left = `${percentage}%`;
+        // Update the arrow position
+        timelineArrow.style.left = `${percentage}%`;
 
-// Dynamically update the year value
-const year = Math.floor(2007 + ((2024 - 2007) * (percentage / 100)));
-timelineArrow.textContent = year;
-});
+        // Dynamically update the year value
+        const year = Math.floor(1800 + ((2050 - 1800) * (percentage / 100)));
+        timelineArrow.textContent = year;
+    });
 });
 
 // Show all photos when the page loads
 window.onload = showAllPhotos;
-
-
-
