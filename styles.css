@@ -303,7 +303,8 @@ input[type="text"]:focus {
   
   #timelineBtn {
     padding: 8px 16px; /* Reduced */
-    margin-left: -43px; /* Reduced */
+    margin-left: -23px; /* Reduced */
+    font-size: medium;
   }
   
   .gallery {
