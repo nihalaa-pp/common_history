@@ -16,9 +16,11 @@
     </div>
     <nav class="main-nav">
         <div class="dropdown">
-            <button id="timelineBtn" onclick="toggleDropdown()">Global Timeline</button>
-            <input type="text" id="searchInput" class="search-input" placeholder="Search here..."style="font-size:25px; width:800px">
-            <button class="search-button" onclick="searchPhotos()" style="font-size:25px;">Search</button>
+            <div class="search-container">
+                <button class="global-timeline-button" id="timelineBtn" onclick="toggleDropdown()">Global Timeline</button>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search here..." style="font-size:25px;">
+                <button class="search-button" onclick="searchPhotos()" style="font-size:25px;">Search</button>
+            </div>
             <div id="dropdownContent" class="dropdown-content">
                 <ul id="locationList">
                     <li><a href="#" onclick="filterPhotos('thamarassery')">Thamarassery</a></li>
@@ -32,10 +34,11 @@
             </div>
         </div>
     </nav>
+    
   
 
     <div class="timeline">
-        <div class="timeline-year" data-year="2007">1800</div>
+        <div class="timeline-year " data-year="2007">1800</div>
         <div class="timeline-progress">
             <div class="timeline-arrow" id="timeline-arrow"></div>
         </div>

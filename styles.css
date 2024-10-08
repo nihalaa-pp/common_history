@@ -1,414 +1,354 @@
 /* Resetting margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #E6E6E2;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e6e6e2;
 }
 
 /* Styling the body and making the layout cover full height */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #E6E6E2;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e6e6e2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Logo styling */
 .logo h1 {
-    font-size: 4rem;
-    color: #060606;
-    font-family: 'Times New Roman', Times, serif;
-    padding-left: 50px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
+  font-size: 3rem; /* Reduced */
+  color: #060606;
+  font-family: "Times New Roman", Times, serif;
+  padding-left: 30px; /* Reduced */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-top: 10px; /* Reduced */
 }
 .logo a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Navbar styling */
 .main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    flex-wrap: wrap;
-    margin-bottom: 100px;
-    padding-left: 50px;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-wrap: wrap;
+  margin-bottom: 60px; /* Reduced */
+  padding-left: 30px; /* Reduced */
+  gap: 10px; /* Reduced */
 }
 
 /* Search Input Focus */
 .search-input:focus {
-    border-color: black;
-    outline: none;
+  border-color: black;
+  outline: none;
 }
 
 /* Button styling */
 .main-nav button {
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: #80806f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
+  font-size: 16px; /* Reduced */
+  padding: 8px 16px; /* Reduced */
+  background-color: #80806f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 8px; /* Reduced */
 }
 
 .main-nav button:hover {
-    background-color: #80806f;
+  background-color: #80806f;
 }
 
 /* Dropdown styling */
 .dropdown {
-    position: relative;
-    margin-top: -70px;
+  position: relative;
+  margin-top: -50px; /* Adjusted */
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #E6E6E2;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
-    overflow: hidden;
+  display: none;
+  position: absolute;
+  background-color: #e6e6e2;
+  min-width: 150px; /* Reduced */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adjusted */
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .dropdown-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .dropdown-content li a {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s;
+  display: block;
+  padding: 8px; /* Reduced */
+  color: #333;
+  text-decoration: none;
+  font-size: 14px; /* Reduced */
+  transition: background-color 0.3s;
 }
 
 .dropdown-content li a:hover {
-    background-color: #E6E6E2;
+  background-color: #e6e6e2;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 /* Timeline section */
 .timeline {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    background-color: #E6E6E2;
-    position: relative;
-    margin-top: -80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px; /* Reduced */
+  background-color: #e6e6e2;
+  position: relative;
+  margin-top: -50px; /* Adjusted */
 }
 
 .timeline-year {
-    background-color:#80806f;
-    border: 1px solid;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    position: relative;
+  background-color: #80806f;
+  border: 1px solid;
+  padding: 8px; /* Reduced */
+  border-radius: 5px;
+  font-size: 20px; /* Reduced */
+  font-weight: bold;
+  color: white;
+  position: relative;
 }
 
 .timeline-progress {
-    position: relative;
-    width: 80%;
-    height: 10px;
-    background-color:#80806f;
-    border-radius: 5px;
-    margin: 0 20px;
+  position: relative;
+  width: 80%;
+  height: 8px; /* Reduced */
+  background-color: #80806f;
+  border-radius: 5px;
+  margin: 0 15px; /* Reduced */
 }
 
 .timeline-arrow {
-    position: absolute;
-    height: 50px;
-    width: 80px;
-    background-color:#80806f;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: left 0.5s ease;
-    color: #fff;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    z-index: 10;
+  position: absolute;
+  height: 35px; /* Reduced */
+  width: 60px; /* Reduced */
+  background-color: #80806f;
+  top: -10px; /* Adjusted */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: left 0.5s ease;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  z-index: 10;
 }
 
 #timelineBtn {
-    font-size: 25px;
-    padding: 10px 20px;
-    background-color: #80806f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 20px;
+  font-size: 25px; /* Reduced */
+  padding: 8px 16px; /* Reduced */
+  background-color: #80806f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 15px; /* Reduced */
 }
 
 /* Input styling */
 input[type="text"] {
-    font-size: 18px;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    width: 300px;
-    margin-right: 10px;
+  font-size: 16px; /* Reduced */
+  padding: 8px; /* Reduced */
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 250px; /* Reduced */
+  margin-right: 8px; /* Reduced */
 }
 
 input[type="text"]:focus {
-    border-color: #060606;
-    outline: none;
+  border-color: #060606;
+  outline: none;
 }
 
 /* Gallery section */
 .gallery {
-    display: flex;
-    overflow-x: auto;
-    padding: 2rem;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    flex-grow: 1;
-    height: auto;
-    background-color: #E6E6E2;
+  display: flex;
+  overflow-x: auto;
+  padding: 1.5rem; /* Reduced */
+  gap: 1.5rem; /* Reduced */
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  height: auto;
+  background-color: #e6e6e2;
 }
 
 /* Individual photo cards */
 .photo-card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .photo-card img {
-    height: 700px;
-    object-fit: cover;
-    border-radius: 8px;
-    background-color: #E6E6E2;
+  height: 350px; /* Reduced */
+  object-fit: cover;
+  border-radius: 9px;
+  background-color: #e6e6e2;
 }
 
 .photo-details {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: #E6E6E2;
-    font-size: 25px;
-    font-family: 'Times New Roman', Times, serif;
+  margin-top: 0.8rem; /* Reduced */
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Reduced */
+  background-color: #e6e6e2;
+  font-size: 18px; /* Reduced */
+  font-family: "Times New Roman", Times, serif;
 }
 
 .photo-details button {
-    font-size: 25px;
-    background-color:#80806f;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-bottom: 1rem;
+  font-size: 18px; /* Reduced */
+  background-color: #80806f;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem; /* Reduced */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.8rem; /* Reduced */
 }
 
 .photo-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #E6E6E2;
-    padding: 1rem;
-    border-radius: 0 0 8px 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #e6e6e2;
+  padding: 0.8rem; /* Reduced */
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .photo-card:hover .photo-info {
-    opacity: 1;
-    background-color:#E6E6E2;
+  opacity: 1;
+  background-color: #e6e6e2;
 }
 
 /* Popup styling */
 .popup {
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .popup-content {
-    background-color:#E6E6E2;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 850px;
+  background-color: #e6e6e2;
+  margin: 10% auto; /* Reduced */
+  padding: 15px; /* Reduced */
+  border: 1px solid #888;
+  width: 70%; /* Reduced */
+  max-width: 850px; /* Reduced */
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+  color: #aaa;
+  float: right;
+  font-size: 24px; /* Reduced */
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
-/* Responsive styling for various screen sizes */
-@media (max-width: 1200px) {
-    #timelineBtn {
-        font-size: 16px;
-        padding: 8px 16px;
-        margin-left: auto;
-    }
+/* Media Query for mobile screens (less than 768px) */
+@media only screen and (max-width: 768px) {
+  /* Logo adjustments */
+  .logo h1 {
+    font-size: 3rem; /* Smaller font size for mobile */
+    text-align: center; /* Center the logo */
+    margin: 10px 0; /* Add some space around the logo */
+  }
 
-    .gallery {
-        padding: 4rem;
-        gap: 1.5rem;
-    }
+  /* Navbar adjustments */
+  .main-nav {
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center align all nav items */
+    padding: 10; /* Add some padding */
+    margin-top: 50px;
+  }
 
-    .photo-card {
-        height: 450px;
-    }
+  /* Search input adjustments */
+  .search-input {
+    width: 80%; /* Make the search input responsive */
+    font-size: 1rem; /* Adjust font size */
+    margin: 10px 0; /* Add spacing between elements */
+    margin: 0 10px; /* Add spacing between input and buttons */
+  }
 
-    .photo-card img {
-        height: 350px;
-    }
-}
+  /* Search button adjustments */
+  .search-button {
+    font-size: 1rem; /* Adjust font size */
+    padding: 8px 12px; /* Adjust padding for mobile */
+  }
+  .search-container {
+    flex-direction: row; /* Align items in a row */
+  }
+  .search-button,
+  .global-timeline-button {
+    margin: 0; /* Remove margins to fit better */
+  }
 
-@media (max-width: 768px) {
-    .logo h1 {
-        font-size: 2.5rem; /* Adjust font size for visibility */
-        color: #060606; /* Ensure text color remains visible */
-        padding-left: 20px;
-        margin-top: 10px;
-    }
+  /* Dropdown button adjustments */
+  .dropdown button {
+    font-size: 1rem; /* Smaller font size for mobile */
+    width: auto; /* Let the button take only the required width */
+    margin-left: 10px;
+  }
 
-    .main-nav button, 
-    .search-input {
-        width: 100%;
-        margin-top: 10px;
-    }
+  /* Timeline adjustments */
+  .timeline {
+    flex-direction: row; /* Stack timeline elements vertically */
+    align-items: center; /* Center align them */
+  }
 
-    .timeline {
-        flex-direction: column;
-        padding: 10px;
-    }
+  .timeline-year {
+    font-size: 1.2rem; /* Adjust font size for timeline years */
+    margin: 10px 0; /* Add spacing between years */
+  }
 
-    .timeline-year {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
+  .timeline-progress {
+    width: 90%; /* Make progress bar responsive */
+  }
 
-    .timeline-progress {
-        width: 100%;
-        margin: 10px 0;
-    }
+  /* Gallery adjustments */
+  .gallery {
+    flex-direction: column; /* Stack gallery items */
+    align-items: center; /* Center align them */
+  }
 
-    .timeline-arrow {
-        width: 40px;
-    }
+  .photo-card img {
+    height: auto; /* Let image height be responsive */
+    max-width: 100%; /* Ensure the image is not wider than its container */
+  }
 
-    #timelineBtn {
-        font-size: 16px;
-        padding: 8px 16px;
-        margin-left: 0;
-    }
-
-    input[type="text"] {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    .photo-details {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .photo-details button {
-        width: 100%;
-        margin: 0.5rem 0;
-        padding: 0.5rem;
-        font-size: 16px;
-    }
-
-    .popup-content {
-        width: 90%;
-    }
-
-    .gallery {
-        padding: 3rem;
-        gap: 1rem;
-    }
-
-    .photo-card {
-        height: 400px;
-    }
-
-    .photo-card img {
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo h1 {
-        font-size: 2rem; /* Further adjust font size for very small screens */
-        color: #060606;
-        padding-left: 10px;
-        margin-top: 5px;
-    }
-
-    .main-nav button,
-    .search-input {
-        font-size: 14px;
-    }
-
-    .timeline-year {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .timeline-progress {
-        height: 8px;
-    }
-
-    .timeline-arrow {
-        font-size: 10px;
-        height: 25px;
-    }
-
-    .photo-card img {
-        height: 200px;
-    }
-
-    .photo-details button {
-        font-size: 14px;
-        padding: 0.5rem;
-    }
-
-    input[type="text"] {
-        font-size: 14px;
-    }
+  .photo-details {
+    flex-direction: column; /* Stack details vertically */
+  }
 }
