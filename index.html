@@ -1,70 +1,70 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Common History Replica</title>
+    <!-- Add Font Awesome for the search icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
-      <div class="header">
-    <div class="logo">
-        <a href="index.html">
-            <h1>COMMON HISTORY</h1>
-        </a>
-    </div>
-    <nav class="main-nav">
-        <div class="dropdown">
-            <div class="search-container">
-                <button class="global-timeline-button" id="timelineBtn" onclick="toggleDropdown()">Global Timeline</button>
-                <input type="text" id="searchInput" class="search-input" placeholder="Search here..." style="font-size:25px;">
-                <button class="search-button" onclick="searchPhotos()" style="font-size:25px;">Search</button>
-            </div>
-            <div id="dropdownContent" class="dropdown-content">
-                <ul id="locationList">
-                    <li><a href="#" onclick="filterPhotos('thamarassery')">Thamarassery</a></li>
-                    <li><a href="#" onclick="filterPhotos('ponoor')">Ponoor</a></li>
-                    <li><a href="#" onclick="filterPhotos('kannur')">Kannur</a></li>
-                    <li><a href="#" onclick="filterPhotos('kozhikode')">Kozhikode</a></li>
-                    <li><a href="#" onclick="filterPhotos('wayanad')">Wayanad</a></li>
-                    <li><a href="#" onclick="filterPhotos('malappuram')">Malappuram</a></li>
-                    <li><a href="#" onclick="filterPhotos('mukkam')">Mukkam</a></li>
-                </ul>
-            </div>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <h1>COMMON HISTORY</h1>
+            </a>
         </div>
-    </nav>
-    
+        <nav class="main-nav">
+            <div class="dropdown">
+                <div class="search-container">
+                    <button class="global-timeline-button" id="timelineBtn" onclick="toggleDropdown()">Global Timeline</button>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search here..." style="font-size:25px; width:500px;">
+                    
+                    <!-- Replacing the search button with a search icon -->
+                    <i class="fas fa-search search-icon" onclick="searchPhotos()" style="font-size: 25px; position: absolute; right: 25px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                </div>
+                <div id="dropdownContent" class="dropdown-content">
+                    <ul id="locationList">
+                        <li><a href="#" onclick="filterPhotos('thamarassery')">Thamarassery</a></li>
+                        <li><a href="#" onclick="filterPhotos('ponoor')">Ponoor</a></li>
+                        <li><a href="#" onclick="filterPhotos('kannur')">Kannur</a></li>
+                        <li><a href="#" onclick="filterPhotos('kozhikode')">Kozhikode</a></li>
+                        <li><a href="#" onclick="filterPhotos('wayanad')">Wayanad</a></li>
+                        <li><a href="#" onclick="filterPhotos('malappuram')">Malappuram</a></li>
+                        <li><a href="#" onclick="filterPhotos('mukkam')">Mukkam</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
   
-
-    <div class="timeline">
-        <div class="timeline-year " data-year="2007">1800</div>
-        <div class="timeline-progress">
-            <div class="timeline-arrow" id="timeline-arrow"></div>
+        <div class="timeline">
+            <div class="timeline-year" data-year="2007">1800</div>
+            <div class="timeline-progress">
+                <div class="timeline-arrow" id="timeline-arrow"></div>
+            </div>
+            <div class="timeline-year" data-year="2024">2050</div>
         </div>
-        <div class="timeline-year" data-year="2024">2050</div>
-    </div>
 
-    <section class="gallery" id="photoGallery">
-        <!-- All photos will be dynamically loaded here -->
-    </section>
-
+        <section class="gallery" id="photoGallery">
+            <!-- All photos will be dynamically loaded here -->
+        </section>
     
-<!-- Share Popup -->
-<div id="sharePopup" class="popup" style="display:none;">
-    <div class="popup-content">
-        <span class="close" onclick="closeSharePopup()">&times;</span>
-        <h2 class="popup-title"></h2>
-        <img class="popup-image" src="" alt="Shared Image">
-        <p>Share on:</p>
-        <button onclick="shareOnSocialMedia('facebook')">Facebook</button>
-        <button onclick="shareOnSocialMedia('whatsapp')">Whatsup</button>
-        <button onclick="shareOnSocialMedia('twitter')">Twitter</button>
-        <button onclick="shareOnSocialMedia('print')">Print</button>
-        
-    </div>
-</div>
+        <!-- Share Popup -->
+        <div id="sharePopup" class="popup" style="display:none;">
+            <div class="popup-content">
+                <span class="close" onclick="closeSharePopup()">&times;</span>
+                <h2 class="popup-title"></h2>
+                <img class="popup-image" src="" alt="Shared Image">
+                <p>Share on:</p>
+                <button onclick="shareOnSocialMedia('facebook')">Facebook</button>
+                <button onclick="shareOnSocialMedia('whatsapp')">Whatsup</button>
+                <button onclick="shareOnSocialMedia('twitter')">Twitter</button>
+                <button onclick="shareOnSocialMedia('print')">Print</button>
+            </div>
+        </div>
 
-    <script src="script.js" defer></script>
-</body>
+        <script src="script.js" defer></script>
+    </body>
 </html>
