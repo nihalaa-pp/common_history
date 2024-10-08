@@ -439,3 +439,410 @@ input[type="text"]:focus {
       font-size: 1.5rem; /* Adjust the size of the close button */
   }
 }
+/* Media Query for landscape mode on tablets and mobile devices */
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+
+  /* Body adjustments */
+  body {
+    flex-direction: row; /* Change layout to row for more space in landscape */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+  }
+
+  /* Logo adjustments */
+  .logo h1 {
+    font-size: 2.5rem; /* Increase font size for better readability */
+    text-align: left; /* Align to the left in landscape */
+    margin-left: 20px;
+  }
+
+  /* Navbar adjustments */
+  .main-nav {
+    flex-direction: row; /* Align navbar horizontally */
+    justify-content: space-between;
+    padding: 15px 30px; /* Increase padding for landscape */
+  }
+
+  /* Timeline button adjustments */
+  #timelineBtn {
+    font-size: medium;
+    padding: 10px 20px;
+    margin-left: 0; /* Center the button */
+  }
+
+  /* Gallery adjustments */
+  .gallery {
+    gap: 20px; /* Increase gap between images */
+    padding: 10px; /* Adjust padding for better fit */
+  }
+
+  .photo-card img {
+    height: 300px; /* Adjust image height */
+  }
+
+  /* Popup adjustments */
+  .popup {
+    width: 60%; /* Wider popup for landscape */
+    height: 80%; /* Allow more height */
+    transform: translate(-50%, -40%);
+    top: 45%;
+  }
+
+  .popup-content {
+    padding: 15px;
+  }
+
+  /* Search input adjustments */
+  .search-input {
+    max-width: 300px; /* Wider input for landscape */
+  }
+
+  /* Make buttons and inputs more prominent */
+  .popup button,
+  .main-nav button {
+    font-size: 1rem;
+    padding: 0.6rem 1rem; /* Add padding */
+  }
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px){
+  /* Resetting margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #E6E6E2;
+}
+
+/* Styling the body and making the layout cover full height */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #E6E6E2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Logo styling */
+.logo h1 {
+  font-size: 3rem;
+  color: #060606;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 50px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+.logo a {
+  text-decoration: none;
+}
+
+/* Navbar styling */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  padding-left: 50px;
+  gap: 15px;
+}
+.search-input{
+  font-size:5px; 
+  width:100px;
+}
+
+/* Search Input Focus */
+.search-input:focus {
+  border-color: black;
+  outline: none;
+}
+.search-button{
+  font-size:25px;
+}
+
+/* Button styling */
+.main-nav button {
+  font-size: 5px;
+  padding: 10px 20px;
+  background-color: #80806f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.main-nav button:hover {
+  background-color: #80806f;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  margin-top: -70px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #E6E6E2;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content li a:hover {
+  background-color: #E6E6E2;
+}
+
+.show {
+  display: block;
+}
+
+/* Timeline section */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #E6E6E2;
+  position: relative;
+  margin-top: -80px;
+}
+
+.timeline-year {
+  background-color:#80806f;
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+}
+
+.timeline-progress {
+  position: relative;
+  width: 80%;
+  height: 10px;
+  background-color:#80806f;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.timeline-arrow {
+  position: absolute;
+  height: 40px;
+  width: 80px;
+  background-color:#80806f;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: left 0.5s ease;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+#timelineBtn {
+  font-size: 25px;
+  padding: 10px 20px;
+  background-color: #80806f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* Input styling */
+input[type="text"] {
+  font-size: 18px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+input[type="text"]:focus {
+  border-color: #060606;
+  outline: none;
+}
+
+/* Gallery section */
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  height: auto;
+  background-color: #E6E6E2;
+}
+
+/* Individual photo cards */
+.photo-card:hover {
+  transform: translateY(-10px);
+}
+
+.photo-card img {
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #E6E6E2;
+}
+
+.photo-details {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #E6E6E2;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.photo-details button {
+  font-size: 25px;
+  background-color:#80806f;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.photo-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #E6E6E2;
+  padding: 1rem;
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photo-card:hover .photo-info {
+  opacity: 1;
+  background-color:#E6E6E2;
+}
+
+/* Popup styling */
+.popup {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-content {
+  background-color:#E6E6E2;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 850px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background-color:#e6e6e2 ;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: none;
+  height:700px
+  
+}
+
+.popup-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.popup-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.popup button {
+  font-size: 18px;
+  background-color: #80806f;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.8rem;
+}
+
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive styling for various screen sizes */
+
+
+}
