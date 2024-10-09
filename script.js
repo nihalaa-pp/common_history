@@ -1,4 +1,16 @@
 const allPhotos = [
+    { location: 'thamarassery', src: 'images/njnj.avif', details: 'Details about Thamarassery Photo 1', year: 1800 },
+    { location: 'thamarassery', src: 'images/hthh.avif', details: 'Details about Thamarassery Photo 2', year: 1875 },
+    { location: 'mukkam', src: 'images/htht.avif', details: 'Details about Mukkam Photo 1', year: 1880 },
+    { location: 'ponoor', src: 'images/jiji.avif', details: 'Details about Ponoor Photo 2', year: 1900 },
+    { location: 'kannur', src: 'images/kiki.avif', details: 'Details about Kannur Photo 1', year: 1861 },
+    { location: 'kannur', src: 'images/hthh.avif', details: 'Details about Kannur Photo 2', year: 1910 },
+    { location: 'kozhikode', src: 'images/kk.jpg', details: 'Details about Kozhikode Photo 1', year: 1930 },
+    { location: 'kozhikode', src: 'images/mk.jpg', details: 'Details about Kozhikode Photo 2', year: 1950 },
+    { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 1', year: 1861 },
+    { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 2', year: 2000 },
+    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 1', year: 1990 },
+    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 2', year: 2024 },
     { location: 'thamarassery', src: 'images/njnj.avif', details: 'Details about Thamarassery Photo 1', year: 1861 },
     { location: 'thamarassery', src: 'images/hthh.avif', details: 'Details about Thamarassery Photo 2', year: 1875 },
     { location: 'mukkam', src: 'images/htht.avif', details: 'Details about Mukkam Photo 1', year: 1880 },
@@ -10,7 +22,19 @@ const allPhotos = [
     { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 1', year: 1861 },
     { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 2', year: 2000 },
     { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 1', year: 1990 },
-    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 2', year: 2024 }
+    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 2', year: 2024 },
+    { location: 'thamarassery', src: 'images/njnj.avif', details: 'Details about Thamarassery Photo 1', year: 1861 },
+    { location: 'thamarassery', src: 'images/hthh.avif', details: 'Details about Thamarassery Photo 2', year: 1875 },
+    { location: 'mukkam', src: 'images/htht.avif', details: 'Details about Mukkam Photo 1', year: 1880 },
+    { location: 'ponoor', src: 'images/jiji.avif', details: 'Details about Ponoor Photo 2', year: 1900 },
+    { location: 'kannur', src: 'images/kiki.avif', details: 'Details about Kannur Photo 1', year: 1861 },
+    { location: 'kannur', src: 'images/hthh.avif', details: 'Details about Kannur Photo 2', year: 1910 },
+    { location: 'kozhikode', src: 'images/kk.jpg', details: 'Details about Kozhikode Photo 1', year: 1930 },
+    { location: 'kozhikode', src: 'images/mk.jpg', details: 'Details about Kozhikode Photo 2', year: 1950 },
+    { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 1', year: 1861 },
+    { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 2', year: 2000 },
+    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 1', year: 1990 },
+    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 2', year: 2050 }
 ];
 
 
@@ -170,24 +194,23 @@ document.addEventListener('DOMContentLoaded', function () {
     timeline.addEventListener('mousemove', (e) => {
         const timelineRect = timeline.getBoundingClientRect();
         const offsetX = e.clientX - timelineRect.left;
-        const percentage = (offsetX / timelineRect.width) * 100;
+        const percentage = Math.min(Math.max(offsetX / timelineRect.width, 0), 1); // Clamp value between 0 and 1
 
         // Update the arrow position
-        timelineArrow.style.left = `${percentage}%`;
+        timelineArrow.style.left = `${percentage * 100}%`;
 
-        // Dynamically calculate the year
-        const year = Math.floor(1800 + ((2050 - 1800) * (percentage / 100)));
+        // Calculate the year dynamically
+        const year = Math.floor(1800 + ((2050 - 1800) * percentage));
         timelineArrow.textContent = year;
 
-        // Filter photos by the selected year
+        // Filter and display photos for the selected year
         const filteredPhotos = allPhotos.filter(photo => photo.year === year);
-        displayPhotos(filteredPhotos); // Call a new function to display filtered photos
+        displayPhotos(filteredPhotos);
     });
 });
 
-// Show all photos when the page loads
+// Load all photos on page load
 window.onload = showAllPhotos;
-
 
 
 function displayPhotos(photos) {
