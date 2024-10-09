@@ -1,17 +1,18 @@
 const allPhotos = [
-    { location: 'thamarassery', src: 'images/njnj.avif', details: 'Details about Thamarassery Photo 1' },
-    { location: 'thamarassery', src: 'images/hthh.avif', details: 'Details about Thamarassery Photo 2' },
-    { location: 'mukkam', src: 'images/htht.avif', details: 'Details about Mukkam Photo 1' },
-    { location: 'ponoor', src: 'images/jiji.avif', details: 'Details about Ponoor Photo 2' },
-    { location: 'kannur', src: 'images/kiki.avif', details: 'Details about Kannur Photo 1' },
-    { location: 'kannur', src: 'images/hthh.avif', details: 'Details about Kannur Photo 2' },
-    { location: 'kozhikode', src: 'images/kk.jpg', details: 'Details about Kozhikode Photo 1' },
-    { location: 'kozhikode', src: 'images/mk.jpg', details: 'Details about Kozhikode Photo 2' },
-    { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 1' },
-    { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 2' },
-    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 1' },
-    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 2' }
+    { location: 'thamarassery', src: 'images/njnj.avif', details: 'Details about Thamarassery Photo 1', year: 1861 },
+    { location: 'thamarassery', src: 'images/hthh.avif', details: 'Details about Thamarassery Photo 2', year: 1875 },
+    { location: 'mukkam', src: 'images/htht.avif', details: 'Details about Mukkam Photo 1', year: 1880 },
+    { location: 'ponoor', src: 'images/jiji.avif', details: 'Details about Ponoor Photo 2', year: 1900 },
+    { location: 'kannur', src: 'images/kiki.avif', details: 'Details about Kannur Photo 1', year: 1861 },
+    { location: 'kannur', src: 'images/hthh.avif', details: 'Details about Kannur Photo 2', year: 1910 },
+    { location: 'kozhikode', src: 'images/kk.jpg', details: 'Details about Kozhikode Photo 1', year: 1930 },
+    { location: 'kozhikode', src: 'images/mk.jpg', details: 'Details about Kozhikode Photo 2', year: 1950 },
+    { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 1', year: 1861 },
+    { location: 'wayanad', src: 'images/thamarassery.jpg', details: 'Details about Wayanad Photo 2', year: 2000 },
+    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 1', year: 1990 },
+    { location: 'malappuram', src: 'images/thamarassery.jpg', details: 'Details about Malappuram Photo 2', year: 2024 }
 ];
+
 
 // Function to toggle the dropdown
 function toggleDropdown() {
@@ -162,7 +163,6 @@ function searchPhotos() {
     }
 }
 
-// Event listener for the timeline arrow movement and dynamic year update
 document.addEventListener('DOMContentLoaded', function () {
     const timelineArrow = document.getElementById('timeline-arrow');
     const timeline = document.querySelector('.timeline-progress');
@@ -175,11 +175,43 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update the arrow position
         timelineArrow.style.left = `${percentage}%`;
 
-        // Dynamically update the year value
+        // Dynamically calculate the year
         const year = Math.floor(1800 + ((2050 - 1800) * (percentage / 100)));
         timelineArrow.textContent = year;
+
+        // Filter photos by the selected year
+        const filteredPhotos = allPhotos.filter(photo => photo.year === year);
+        displayPhotos(filteredPhotos); // Call a new function to display filtered photos
     });
 });
 
 // Show all photos when the page loads
 window.onload = showAllPhotos;
+
+
+
+function displayPhotos(photos) {
+    const gallery = document.getElementById("photoGallery");
+    gallery.innerHTML = ''; // Clear previous photos
+
+    photos.forEach(photo => {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        card.onclick = function() { showDetails(this); };
+        card.innerHTML = `
+            <img src="${photo.src}" alt="Photo">
+            <div class="photo-details">
+                <button onclick="openSharePopup(event, '${photo.location}', '${photo.src}')">SHARE</button>
+                <p>${photo.location.toUpperCase()}</p>
+            </div>
+            <div class="photo-info" style="display: none;">
+                <p>${photo.details}</p>
+            </div>
+        `;
+        gallery.appendChild(card);
+    });
+
+    if (photos.length === 0) {
+        gallery.innerHTML = `<p>No photos available for the selected year ${year}.</p>`;
+    }
+}
